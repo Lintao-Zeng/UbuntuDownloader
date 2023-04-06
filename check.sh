@@ -3,7 +3,7 @@
 while :
 do
      echo "running"
-     if [ -f end.txt ] 
+     if [ -f /home/runner/end.txt ] 
      then
           break
      fi
