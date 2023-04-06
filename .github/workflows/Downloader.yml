@@ -6,12 +6,9 @@ jobs:
     steps:
      - uses: actions/checkout@v1
    
-     - name: Try Build
-       run: bash /home/runner/work/_temp/8712506b-7e56-4b6e-b416-0ec78e254289.sh
-       env:
-        # You can find this token here: https://dashboard.ngrok.com/get-started/setup
+     - name: Set environment
+       run: |
         NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
-        # This password you will use when authorizing via SSH 
         USER_PASS: ${{ secrets.USER_PASS }}
         
      - name: Start SSH via Ngrok
