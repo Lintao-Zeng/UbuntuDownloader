@@ -6,17 +6,16 @@ jobs:
     steps:
      - uses: actions/checkout@v1
    
+     - name: Start SSH via Ngrok
+       run: echo "set environment"
        env:
-        # After sign up on the https://ngrok.com/
         # You can find this token here: https://dashboard.ngrok.com/get-started/setup
         NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
-
         # This password you will use when authorizing via SSH 
         USER_PASS: ${{ secrets.USER_PASS }}
         
      - name: Start SSH via Ngrok
-       run: |
-         curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/debug-github-actions.sh | bash
+       run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/debug-github-actions.sh | bash
          
      - name: Current directory
        run: pwd
