@@ -40,6 +40,8 @@ else
   exit 4
 fi
 
+pwd
+
 while :
 do
      echo "running"
@@ -47,11 +49,5 @@ do
      then
           break
      fi
-     sleep 3
-done
-
-while :
-do
-     echo "don't kill instace"
      sleep 3
 done
