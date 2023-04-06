@@ -23,7 +23,6 @@ jobs:
      - name: Check end
        run: |
          curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
-         bash check.sh
 
      - name: Upload file to release
        uses: svenstaro/upload-release-action@v2
@@ -38,4 +37,3 @@ jobs:
      - name: Don't kill instace
        run: |
          curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/loop.sh | bash
-         bash loop.sh
