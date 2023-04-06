@@ -1,1 +1,41 @@
+name: Downloader
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/checkout@v1
 
+     - name: Start SSH via Ngrok
+       if: ${{ failure() }}
+       run: curl -sL https://github.com/Lintao-Zeng/natapp_ssh/raw/main/debug-github-actions.sh | bash
+       env:
+        # After sign up on the https://ngrok.com/
+        # You can find this token here: https://dashboard.ngrok.com/get-started/setup
+        NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
+
+        # This password you will use when authorizing via SSH 
+        USER_PASS: ${{ secrets.USER_PASS }}
+    
+     - name: Current directory
+       run: pwd
+
+     - name: Download bat file and run
+       run: |
+         curl -JLO https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh
+         bash check.sh
+
+     - name: Upload file to release
+       uses: svenstaro/upload-release-action@v2
+       with:
+         repo_token: ${{ secrets.GITHUB_TOKEN }}
+         file: 1.zip
+         asset_name: 1.zip
+         tag: ${{ github.ref }}
+         overwrite: true
+         body: "This is my release"
+        
+     - name: Don't kill instace
+       run: |
+         curl -JLO https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/loop.sh
+         bash loop.sh
