@@ -5,16 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v1
-     
-     - name: Try Build
-       run: ./not-exist-file.sh it bloke build
-       
+   
      - name: Start SSH via Ngrok
-       if: ${{ failure() }}
        run: |
          curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/debug-github-actions.sh | bash
-         pwd
-         curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
+         
+     - name: Current directory
+       run: pwd
+       
+     - name: Check end
+       run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
+       
        env:
         # After sign up on the https://ngrok.com/
         # You can find this token here: https://dashboard.ngrok.com/get-started/setup
@@ -33,3 +34,6 @@ jobs:
          overwrite: true
          body: "This is my release"
         
+     - name: Don't kill instance
+       run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/loop.sh | bash
+       
