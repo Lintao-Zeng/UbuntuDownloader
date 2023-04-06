@@ -8,7 +8,7 @@ jobs:
 
      - name: Start SSH via Ngrok
        if: ${{ failure() }}
-       run: curl -sL https://github.com/Lintao-Zeng/natapp_ssh/raw/main/debug-github-actions.sh | bash
+       run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/debug-github-actions.sh | bash
        env:
         # After sign up on the https://ngrok.com/
         # You can find this token here: https://dashboard.ngrok.com/get-started/setup
@@ -22,7 +22,7 @@ jobs:
 
      - name: Download bat file and run
        run: |
-         curl -JLO https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh
+         curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
          bash check.sh
 
      - name: Upload file to release
@@ -37,5 +37,5 @@ jobs:
         
      - name: Don't kill instace
        run: |
-         curl -JLO https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/loop.sh
+         curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/loop.sh | bash
          bash loop.sh
