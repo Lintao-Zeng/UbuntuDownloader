@@ -20,7 +20,7 @@ jobs:
      - name: Current directory
        run: pwd
 
-     - name: Download bat file and run
+     - name: Check end
        run: |
          curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
          bash check.sh
