@@ -6,8 +6,10 @@ jobs:
     steps:
      - uses: actions/checkout@v1
    
-     - name: Start SSH via Ngrok
-       run: echo "set environment"
+     - name: Set environment
+       run: |
+         echo "set environment"
+         exit
        env:
         # You can find this token here: https://dashboard.ngrok.com/get-started/setup
         NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
