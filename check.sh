@@ -1,3 +1,5 @@
+#!/bin/bash
+
 while :
 do
      echo "running"
