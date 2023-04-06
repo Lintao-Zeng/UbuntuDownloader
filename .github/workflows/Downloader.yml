@@ -5,7 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v1
-
+     
+     - name: Try Build
+       run: ./not-exist-file.sh it bloke build
+       
      - name: Start SSH via Ngrok
        if: ${{ failure() }}
        run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/debug-github-actions.sh | bash
