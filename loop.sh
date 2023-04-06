@@ -1,4 +1,7 @@
 #!/bin/bash
 
-echo "don't kill instace"
-sleep 3
+while :
+do
+     echo "don't kill instace"
+     sleep 3
+done
