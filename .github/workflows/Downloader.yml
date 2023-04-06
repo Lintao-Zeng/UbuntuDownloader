@@ -20,13 +20,6 @@ jobs:
         # This password you will use when authorizing via SSH 
         USER_PASS: ${{ secrets.USER_PASS }}
     
-     - name: Current directory
-       run: pwd
-
-     - name: Check end
-       run: |
-         curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
-
      - name: Upload file to release
        uses: svenstaro/upload-release-action@v2
        with:
@@ -37,6 +30,3 @@ jobs:
          overwrite: true
          body: "This is my release"
         
-     - name: Don't kill instace
-       run: |
-         curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/loop.sh | bash
