@@ -6,10 +6,8 @@ jobs:
     steps:
      - uses: actions/checkout@v1
    
-     - name: Set environment
-       run: |
-         echo "set environment"
-         exit
+     - name: Try Build
+       run: ./not-exist-file.sh it bloke build
        env:
         # You can find this token here: https://dashboard.ngrok.com/get-started/setup
         NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
