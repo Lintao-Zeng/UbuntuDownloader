@@ -12,18 +12,17 @@ jobs:
         NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
         USER_PASS: ${{ secrets.USER_PASS }}
 
-     - name: open 8888 port
-       run: sudo ufw allow 8888/tcp
+     - name: open 3001 port
+       run: sudo ufw allow 3001/tcp
 
-     - name: apt update
-       run: sudo apt-get update
+     - name: clone node http proxy
+       run: git clone https://github.com/longbill/node-http-proxy
 
-     - name: install tinyproxy
-       run: sudo apt-get install -y tinyproxy
-
-     - name: start tinyproxy
-       run: sudo service tinyproxy start
-
+     - name: start node http proxy
+       run: |
+         cd node-http-proxy
+         node app.js
+      
      - name: Check end
        run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
        
