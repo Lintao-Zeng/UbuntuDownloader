@@ -11,7 +11,6 @@ if [[ -z "$USER_PASS" ]]; then
 fi
 
 echo "### Install ngrok ###"
-
 wget -q https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-386.tgz
 tar xvzf ngrok-v3-stable-linux-386.tgz
 chmod +x ./ngrok
@@ -20,8 +19,6 @@ echo "### Update user: $USER password ###"
 echo -e "$USER_PASS\n$USER_PASS" | sudo passwd "$USER"
 
 echo "### Start ngrok proxy for 22 port ###"
-
-
 rm -f .ngrok.log
 ./ngrok authtoken "$NGROK_TOKEN"
 ./ngrok tcp 22 --log ".ngrok.log" &
