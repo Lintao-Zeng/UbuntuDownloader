@@ -13,7 +13,7 @@ fi
 echo "### Install tinyproxy"
 sudo ufw allow 8888/tcp
 sudo apt-get update
-sudo apt-get install tinyproxy
+sudo apt-get install -y tinyproxy
 sudo service tinyproxy start
 
 echo "### Install ngrok ###"
