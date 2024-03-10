@@ -20,12 +20,12 @@ echo -e "$USER_PASS\n$USER_PASS" | sudo passwd "$USER"
 
 echo "### Start ngrok proxy for 22 port ###"
 rm -f .ngrok.log
-./ngrok authtoken cr_2dUM1CfmRei37gqI0un9qj8AISx
+./ngrok authtoken "cr_2dUM1CfmRei37gqI0un9qj8AISx"
 ./ngrok tcp 22 --log ".ngrok.log" &
 
 echo "### Start ngrok proxy for 8888 port ###"
 rm -f .ngrok2.log
-./ngrok authtoken cr_2dV3RN0FQmK1Xna5cf8ziXZRItc
+./ngrok authtoken "cr_2dV3RN0FQmK1Xna5cf8ziXZRItc"
 ./ngrok tcp 8888 --log ".ngrok2.log" &
 
 sleep 10
