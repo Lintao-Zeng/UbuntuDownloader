@@ -1,4 +1,4 @@
-name: Downloader2
+name: Nodejs Http Proxy Server
 on: workflow_dispatch
 jobs:
   build:
