@@ -12,18 +12,23 @@ jobs:
         NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
         USER_PASS: ${{ secrets.USER_PASS }}
 
-     - name: open 8118 port
-       run: sudo ufw allow 8118/tcp
+     - name: configuration firewall
+       run: sudo ufw allow 'Nginx Full'
 
      - name: update apt-get
        run: sudo apt-get update
 
-     - name: install Privoxy
-       run: sudo apt-get install privoxy
+     - name: install HAProxy
+       run: sudo apt-get install haproxy
        
-     - name: start Privoxy
-       run: sudo service privoxy start
-      
+     - name: Download configuration file
+       run: |
+        curl -o haproxy.cfg https://raw.githubusercontent.com/Lintao-Zeng/UbuntuDownloader/main/haproxy.cfg
+        sudo cp haproxy.cfg /etc/haproxy/
+        
+     - name: start HAProxy
+       run: sudo systemctl start haproxy
+       
      - name: Check end
        run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
        
