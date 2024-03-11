@@ -1,4 +1,4 @@
-name: Downloader3
+name: Privoxy Http Proxy Server
 on: workflow_dispatch
 jobs:
   build:
