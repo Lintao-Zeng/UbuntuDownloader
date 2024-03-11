@@ -12,8 +12,8 @@ jobs:
         NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
         USER_PASS: ${{ secrets.USER_PASS }}
 
-     - name: open 25378 port
-       run: sudo ufw allow 25378/tcp
+     - name: open 8118 port
+       run: sudo ufw allow 8118/tcp
 
      - name: update apt-get
        run: sudo apt-get update
