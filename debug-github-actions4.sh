@@ -18,10 +18,10 @@ chmod +x ./ngrok
 echo "### Update user: $USER password ###"
 echo -e "$USER_PASS\n$USER_PASS" | sudo passwd "$USER"
 
-echo "### Start ngrok proxy for 8118 port ###"
+echo "### Start ngrok proxy for 80 port ###"
 rm -f .ngrok.log
 ./ngrok authtoken "$NGROK_TOKEN"
-./ngrok tcp 8118 --log ".ngrok.log" &
+./ngrok tcp 80 --log ".ngrok.log" &
 
 sleep 10
 HAS_ERRORS=$(grep "command failed" < .ngrok.log)
