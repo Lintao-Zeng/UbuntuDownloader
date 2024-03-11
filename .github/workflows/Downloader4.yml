@@ -20,11 +20,6 @@ jobs:
 
      - name: install HAProxy
        run: sudo apt-get install haproxy
-       
-     - name: Download configuration file
-       run: |
-        curl -o haproxy.cfg https://raw.githubusercontent.com/Lintao-Zeng/UbuntuDownloader/main/haproxy.cfg
-        sudo cp haproxy.cfg /etc/haproxy/
         
      - name: start HAProxy
        run: sudo systemctl start haproxy
