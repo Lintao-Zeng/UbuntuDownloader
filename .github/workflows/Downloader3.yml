@@ -12,8 +12,8 @@ jobs:
         NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
         USER_PASS: ${{ secrets.USER_PASS }}
 
-     - name: open 3001 port
-       run: sudo ufw allow 3001/tcp
+     - name: open 8118 port
+       run: sudo ufw allow 8118/tcp
 
      - name: clone node http proxy
        run: git clone https://github.com/longbill/node-http-proxy
