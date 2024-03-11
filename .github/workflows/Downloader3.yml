@@ -15,13 +15,14 @@ jobs:
      - name: open 8118 port
        run: sudo ufw allow 8118/tcp
 
-     - name: clone node http proxy
-       run: git clone https://github.com/longbill/node-http-proxy
+     - name: update apt-get
+       run: sudo apt-get update
 
-     - name: start node http proxy
-       run: |
-         cd node-http-proxy
-         node app.js
+     - name: install Privoxy
+       run: sudo apt-get install privoxy
+       
+     - name: start Privoxy
+       run: sudo service privoxy start
       
      - name: Check end
        run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
