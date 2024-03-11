@@ -1,4 +1,4 @@
-name: Downloader2
+name: Downloader3
 on: workflow_dispatch
 jobs:
   build:
