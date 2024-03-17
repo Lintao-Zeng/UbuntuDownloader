@@ -23,7 +23,10 @@ jobs:
        
      - name: set socks5 port
        run: sudo bash install.sh  --port=8118
-      
+       
+     - name: start socks5 server
+       run: sudo service sockd start
+       
      - name: Check end
        run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
        
