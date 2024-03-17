@@ -22,7 +22,7 @@ jobs:
        run: wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O install.sh
        
      - name: set socks5 port
-       run: bash install.sh  --port=8118
+       run: sudo bash install.sh  --port=8118
       
      - name: Check end
        run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
