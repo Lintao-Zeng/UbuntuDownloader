@@ -1,4 +1,4 @@
-name: Privoxy Http Proxy Server
+name: danted socks5 Proxy Server
 on: workflow_dispatch
 jobs:
   build:
