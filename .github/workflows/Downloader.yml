@@ -14,16 +14,22 @@ jobs:
 
      - name: Check end
        run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
-       
-     - name: Upload file to release
-       uses: svenstaro/upload-release-action@v2
+
+     - name: Upload artifact
+       uses: actions/upload-artifact@v2
        with:
-         repo_token: ${{ secrets.GITHUB_TOKEN }}
-         file: /home/runner/1.zip
-         asset_name: 1.zip
-         tag: ${{ github.ref }}
-         overwrite: true
-         body: "This is my release"
+         name: 1.tgz
+         path: /home/runner/1.tgz
+        
+     # - name: Upload file to release
+     #   uses: svenstaro/upload-release-action@v2
+     #   with:
+     #     repo_token: ${{ secrets.GITHUB_TOKEN }}
+     #     file: /home/runner/1.zip
+     #     asset_name: 1.zip
+     #     tag: ${{ github.ref }}
+     #     overwrite: true
+     #     body: "This is my release"
         
      - name: Don't kill instance
        run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/loop.sh | bash
