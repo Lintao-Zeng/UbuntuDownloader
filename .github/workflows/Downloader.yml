@@ -14,28 +14,10 @@ jobs:
         USER_PASS: ${{ secrets.USER_PASS }}
 
      - name: Check end
-       run: |
-          while true; do
-            echo "Job is still running..."
-            if [ -f "/home/runner/end.txt" ]; then
-              echo "Found end.txt on the desktop. Exiting loop."
-              break
-            fi
-            sleep 300  # 每5分钟输出一次日志
-          done
+       run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
 
      - name: Upload artifact
        uses: actions/upload-artifact@v2
        with:
          name: 1.tgz
          path: /home/runner/1.tgz
-        
-     # - name: Upload file to release
-     #   uses: svenstaro/upload-release-action@v2
-     #   with:
-     #     repo_token: ${{ secrets.GITHUB_TOKEN }}
-     #     file: /home/runner/1.tgz
-     #     asset_name: 1.tgz
-     #     tag: ${{ github.ref }}
-     #     overwrite: true
-     #     body: "This is my release"
