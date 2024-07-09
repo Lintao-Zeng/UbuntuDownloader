@@ -13,8 +13,15 @@ jobs:
         NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
         USER_PASS: ${{ secrets.USER_PASS }}
 
-     - name: Check end
-       run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/check.sh | bash
+     - name: Run a long-running task
+       run: |
+          while true; do
+            echo "running"
+            if [ -f /home/runner/end.txt ]; then
+              break
+            fi
+            sleep 60
+          done
 
      - name: Upload artifact
        uses: actions/upload-artifact@v2
