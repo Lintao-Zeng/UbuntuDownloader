@@ -1,5 +1,4 @@
 #!/bin/bash
-export TERM=xterm
 
 while :
 do
@@ -8,6 +7,5 @@ do
      then
           break
      fi
-     sleep 3
-     clear
+     sleep 60
 done
