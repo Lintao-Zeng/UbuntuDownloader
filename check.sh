@@ -8,4 +8,5 @@ do
           break
      fi
      sleep 3
+     clear
 done
