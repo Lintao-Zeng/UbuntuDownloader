@@ -1,0 +1,21 @@
+name: Commands
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2160
+    steps:
+     - uses: actions/checkout@v1
+   
+     - name: Start SSH via Ngrok
+       run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/debug-github-actions.sh | bash
+       env:
+        NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
+        USER_PASS: ${{ secrets.USER_PASS }}
+    
+     - name: Don't kill instance
+       run: |
+          while true; do
+            echo "Job is still running..."
+            sleep 300  # 每5分钟输出一次日志
+          done
