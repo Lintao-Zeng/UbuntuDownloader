@@ -14,7 +14,7 @@ jobs:
         USER_PASS: ${{ secrets.USER_PASS }}
 
      - name: open 8118 port
-       run: sudo ufw allow 8118/tcp
+       run: sudo ufw allow 8118
 
      - name: update apt-get
        run: sudo apt-get update
