@@ -21,10 +21,3 @@ jobs:
        with:
          name: 1.tgz
          path: /home/runner/1.tgz
-         
-     - name: Don't kill instance
-       run: |
-          while true; do
-            echo "Job is still running..."
-            sleep 300  # 每5分钟输出一次日志
-          done
