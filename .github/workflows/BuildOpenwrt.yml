@@ -20,5 +20,5 @@ jobs:
        uses: actions/upload-artifact@v2
        with:
          name: OpenWrt_firmware
-         path: /mnt/workdir/openwrt/bin/targets/*/*
+         path: /mnt/workdir/openwrt/bin
          
