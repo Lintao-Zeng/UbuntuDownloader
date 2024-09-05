@@ -48,7 +48,3 @@ find dl -size -1024c -exec rm -f {} \;
 
 # Compile the firmware
 make -j$(nproc) || make -j1 || make -j1 V=s
-
-# Clean packages
-cd openwrt/bin/targets/x86/64
-rm -rf packages
