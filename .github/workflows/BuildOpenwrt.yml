@@ -17,7 +17,7 @@ jobs:
        run: curl -sL https://github.com/Lintao-Zeng/UbuntuDownloader/raw/main/build-openwrt.sh | bash
 
      - name: Upload artifact
-       uses: actions/upload-artifact@v2
+       uses: actions/upload-artifact@v4
        with:
          name: OpenWrt_firmware
          path: /mnt/workdir/openwrt/bin
