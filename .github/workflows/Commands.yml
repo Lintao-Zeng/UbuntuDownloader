@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 2160
+    timeout-minutes: 360
     steps:
      - uses: actions/checkout@v1
    
@@ -12,10 +12,39 @@ jobs:
        env:
         NGROK_TOKEN: ${{ secrets.NGROK_TOKEN }}
         USER_PASS: ${{ secrets.USER_PASS }}
-    
-     - name: Don't kill instance
-       run: |
-          while true; do
-            echo "Job is still running..."
-            sleep 300  # 每5分钟输出一次日志
-          done
+
+     - name: Sleep for 30 minutes
+       run: sleep 1800
+
+     - name: Sleep for 30 minutes2
+       run: sleep 1800
+
+     - name: Sleep for 30 minutes3
+       run: sleep 1800
+
+     - name: Sleep for 30 minutes4
+       run: sleep 1800
+
+     - name: Sleep for 30 minutes5
+       run: sleep 1800
+
+     - name: Sleep for 30 minutes6
+       run: sleep 1800
+
+     - name: Sleep for 30 minutes7
+       run: sleep 1800
+
+     - name: Sleep for 30 minutes8
+       run: sleep 1800
+
+     - name: Sleep for 30 minutes9
+       run: sleep 1800
+
+     - name: Sleep for 30 minutes10
+       run: sleep 1800
+
+     - name: Sleep for 30 minutes11
+       run: sleep 1800
+
+     - name: Sleep for 30 minutes12
+       run: sleep 1800
